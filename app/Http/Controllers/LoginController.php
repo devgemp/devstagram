@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use BackedEnum;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
@@ -23,6 +22,6 @@ class LoginController extends Controller
             return back()->with('mensaje', 'Credenciales incorrectas');
         }
 
-        return redirect()->route('posts.index');
+        return redirect()->route('posts.index', auth()->user()->username);
     }
 }
