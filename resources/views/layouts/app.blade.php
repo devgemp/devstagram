@@ -10,9 +10,11 @@
     <body class="bg-gray-100">
         <header class="p-5 border-b bg-white shadow">
             <div class="container mx-auto flex justify-between items-center">
-                <h1 class="text-3xl font-black">
-                    DevStagram
-                </h1>
+                <a href="{{ route('home') }}">
+                    <h1 class="text-3xl font-black">
+                        DevStagram
+                    </h1>
+                </a>
 
                 {{-- Comprobando si un usuario esta autenticado --}}
                 @auth
@@ -34,8 +36,12 @@
 
                 @guest
                     <nav class="flex gap-2 items-center">
-                        <a class="font-bold uppercase text-gray-600 text-sm" href="#">Login</a>
-                        <a class="font-bold uppercase text-gray-600 text-sm" href="{{ route('register.index') }}">Crear Cuenta</a>
+                        <a class="font-bold uppercase text-gray-600 text-sm" href="{{ route('login') }}">
+                            Login
+                        </a>
+                        <a class="font-bold uppercase text-gray-600 text-sm" href="{{ route('register.index') }}">
+                            Crear Cuenta
+                        </a>
                     </nav>
                 @endguest
 
