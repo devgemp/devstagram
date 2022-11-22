@@ -10,8 +10,9 @@
         <div class="w-full md:w-8/12 lg:w-6/12 flex flex-col items-center md:flex-row">
             <div class="w-8/12 lg:w-6/12 px-5">
                 <img
-                    src="{{ asset('img/usuario.svg') }}"
+                    src="{{ $user->imagen ? asset('perfiles') . '/' . $user->imagen : asset('img/usuario.svg') }}"
                     alt="imagen usuario"
+                    class="rounded-full"
                 >
             </div>
             <div class="md:w-8/12 lg:w-6/12 px-5 flex flex-col items-center md:items-start md:justify-center py-10 md:py-10">
@@ -41,7 +42,7 @@
                 </p>
 
                 <p class="text-gray-800 text-sm mb-3 font-bold">
-                    0
+                    {{ $user->posts->count() }}
                     <span class="font-normal">Posts</span>
                 </p>
             </div>

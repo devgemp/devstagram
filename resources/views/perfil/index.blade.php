@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('titulo')
-    Editar perfil: <span class="underline">{{ auth()->user()->username }}</span>
+    Editar perfil: {{ auth()->user()->username }}
 @endsection
 
 @section('contenido')
