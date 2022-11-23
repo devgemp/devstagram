@@ -32,8 +32,8 @@
                 </div>
 
                 <p class="text-gray-800 text-sm mb-3 font-bold">
-                    0
-                    <span class="font-normal">Seguidores</span>
+                    {{ $user->followers->count() }}
+                    <span class="font-normal">@choice('seguidor|seguidores', $user->followers->count())</span>
                 </p>
 
                 <p class="text-gray-800 text-sm mb-3 font-bold">
@@ -68,7 +68,6 @@
                                 >
                             </form>
                         @endif
-
                     @endif
                 @endauth
             </div>
