@@ -69,7 +69,7 @@ class User extends Authenticatable
      */
     public function siguiendo(User $user)
     {
-        return $this->followers()->contains($user->id);
+        return $this->followers->contains($user->id);
     }
 
     /**

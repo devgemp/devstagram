@@ -48,7 +48,7 @@
 
                 @auth
                     @if ($user->id !== auth()->user()->id)
-                        @if ($user->siguiendo( auth()->user() ))
+                        @if (!$user->siguiendo( auth()->user() ))
                             <form action="{{ route('users.follow', $user) }}" method="POST">
                                 @csrf
                                 <input
